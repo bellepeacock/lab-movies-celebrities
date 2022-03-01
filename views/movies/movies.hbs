@@ -1,0 +1,15 @@
+<h2>Here are all the movies !</h2>
+
+<div>
+    {{#each movies}}
+        <ul>
+            <h3>{{title}}</h3>
+            <li>{{genre}}</h4>
+            <li>{{plot}}</p>
+            <li>{{cast}}</p>
+        </ul>
+        <a href='/movies/{{_id}}/edit'>Edit</a>
+        <a href='/movies/{{_id}}/delete'>Delete</a>
+    {{/each}}
+</div> 
+    

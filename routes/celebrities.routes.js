@@ -21,7 +21,7 @@ router.post('/create', (req, res, next) => {
                             errorMessage: "Celebrity already exists, try again"
                         })
                     } else {
-                        Celebrity.create({name, occupation, catchphrase}).then(() => {
+                        Celebrity.create({ name, occupation, catchphrase }).then(() => {
                             res.redirect('/celebrities');
                         })
                     }
@@ -33,8 +33,8 @@ router.post('/create', (req, res, next) => {
 router.get('/', (req, res) => {
     Celebrity.find().then(allCelebrities => {
         console.log(allCelebrities)
-        res.render('celebrities/celebrities', {celebrities: allCelebrities});
-    }).catch(error => console.log(error))
+        res.render('celebrities/celebrities', { celebrities: allCelebrities });
+    }).catch(error => console.error(error))
 });
 
 
