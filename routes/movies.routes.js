@@ -58,9 +58,10 @@ router.get('/:id/edit', (req, res, next) => {
 
     Movie.findById(id)
         .populate('cast')
-        .then((movieById) => {
+        .then((movie) => {
            Celebrity.find() 
-           .then((celebrity) => {res.render('movies/edit-movie.hbs', { movieById, celebrity })
+           .then((celebrities) => {
+               res.render('movies/edit-movie.hbs', { movie, celebrities })
         });
         }).catch(error => console.error(error))
 });

@@ -5,7 +5,7 @@ const movieSchema = new Schema({
     title: String,
     genre: String,
     plot: String,
-    cast: [{type: Schema.Types.ObjectId, ref: Celebrity }],
+    cast: [{type: Schema.Types.ObjectId, ref: 'Celebrity' }],
     // cast uses celebrity IDs as objects - refers to sthing in the celeb database
 });
 

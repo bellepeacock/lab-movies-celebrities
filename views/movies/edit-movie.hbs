@@ -11,8 +11,11 @@
         <input type="text" name="plot" value="{{movie.plot}}">
     </label>
     <label>Cast:
-        <select name="cast" value="{{celebrity.names}}" multiple>
-            <option value="{{this.name}}"></option>
+
+        <select name="cast" value="cast" multiple >
+            {{#each celebrities}}
+                <option value="{{this.name}}">{{this.name}}</option>
+            {{/each}}
         </select>
     </label>
     <button type="submit">Save</button>
